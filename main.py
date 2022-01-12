@@ -4,6 +4,9 @@ import random   # import random Module for door code later
 
 import time     # for Mars landing and lift-off
 
+geographic = ["mountain", "crater"]
+life = ["ET", "bird"]
+
 geographic_count = 0
 life_count = 0
 boring_count = 0
@@ -23,13 +26,15 @@ while True:     # until no more observations, ask user for input and then note t
 
     found_category = False
 
-    if ("mountain" in observation) or ("crater" in observation):
-        geographic_count += 1
-        found_category = True
+    for i in geographic:
+        if i in observation:
+            geographic_count += 1
+            found_category = True
     
-    if ("ET" in observation) or ("bird" in observation):
-        life_count += 1
-        found_category = True
+    for i in life:
+        if i in observation:
+            life_count += 1
+            found_category = True
     
     if found_category == False:
         boring_count += 1
