@@ -26,13 +26,13 @@ while True:     # until no more observations, ask user for input and then note t
 
     found_category = False
 
-    for i in geographic:
-        if i in observation:
+    for word in geographic:
+        if word in observation:
             geographic_count += 1
             found_category = True
-    
-    for i in life:
-        if i in observation:
+
+    for word in life:
+        if word in observation:
             life_count += 1
             found_category = True
     
