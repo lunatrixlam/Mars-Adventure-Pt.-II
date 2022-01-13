@@ -24,7 +24,7 @@ while True:     # until no more observations, ask user for input and then note t
     
     # Categorize observation
 
-    if " " in observation and ", " not in observation:
+    if ", " not in observation:
         for word in observation.split():    # splits the string into a list so we can iterate over
             if word in geographic:
                 geographic_count += 1
