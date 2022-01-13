@@ -5,7 +5,7 @@ import random   # import random Module for door code later
 import time     # for Mars landing and lift-off
 
 geographic = ["mountain", "mountains", "crater", "craters"]
-life = ["ET", "bird", "birds"]
+life = ["ET".lower(), "bird", "birds"]
 
 geographic_count = 0
 life_count = 0
