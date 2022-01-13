@@ -4,8 +4,8 @@ import random   # import random Module for door code later
 
 import time     # for Mars landing and lift-off
 
-geographic = ["mountain", "crater"]
-life = ["ET", "bird"]
+geographic = ["mountain", "mountains", "crater", "craters"]
+life = ["ET", "bird", "birds"]
 
 geographic_count = 0
 life_count = 0
@@ -13,7 +13,7 @@ boring_count = 0
 
 while True:     # until no more observations, ask user for input and then note the observation
 
-    observation = input("What do you see? ")
+    observation = input("What do you see? ").lower()
 
     if observation == "":
         break
