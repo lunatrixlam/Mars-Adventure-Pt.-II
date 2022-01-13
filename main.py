@@ -78,13 +78,19 @@ while True:
             print("Sorry, that's wrong.")
             num_guesses += 1
             print(f"Wrong Guesses: {num_guesses}")
+            print()
     else:
         print("Invalid door code. Enter 4 digits only.")
+        print()
 
+print()
+print()
 print("We're in. Welcome to Mars!")
 print()
 time.sleep(2)
-
+print("...")
+time.sleep(2)
+print()
 # A duel with Darth COBOL 
 
 print("Oh, no! It's Darth COBOL! Time to duel.")
