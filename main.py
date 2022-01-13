@@ -25,7 +25,7 @@ while True:     # until no more observations, ask user for input and then note t
     # Categorize observation
 
     if ", " not in observation:
-        for word in observation.split():    # splits the string into a list so we can iterate over
+        for word in observation.split():    # splits the string into a list and uses the default white-space delimiter so we can iterate over
             if word in geographic:
                 geographic_count += 1
             elif word in life:
@@ -33,7 +33,7 @@ while True:     # until no more observations, ask user for input and then note t
             else:
                 boring_count += 1
     else:
-        for word in observation.split(', '):    # splits the string into a list so we can iterate over
+        for word in observation.split(', '):    # splits the string into a list and uses the comma delimeter so we can iterate over
             if word in geographic:
                 geographic_count += 1
             elif word in life:
