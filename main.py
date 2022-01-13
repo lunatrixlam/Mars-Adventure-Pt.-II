@@ -26,15 +26,25 @@ while True:     # until no more observations, ask user for input and then note t
 
     found_category = False
 
-    for word in observation.split():    # splits the string into a list so we can iterate over
-        if word in geographic:
-            geographic_count += 1
-            found_category = True
-        elif word in life:
-            life_count += 1
-            found_category = True
-        else: 
-            if found_category == False:
+    if " " in observation and ", " not in observation:
+        for word in observation.split():    # splits the string into a list so we can iterate over
+            if word in geographic:
+                geographic_count += 1
+                found_category = True
+            elif word in life:
+                life_count += 1
+                found_category = True
+            else:
+                boring_count += 1
+    else:
+        for word in observation.split(', '):    # splits the string into a list so we can iterate over
+            if word in geographic:
+                geographic_count += 1
+                found_category = True
+            elif word in life:
+                life_count += 1
+                found_category = True
+            else: 
                 boring_count += 1
 
 print()
