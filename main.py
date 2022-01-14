@@ -4,8 +4,8 @@ import random   # import random Module for door code later
 
 import time     # for Mars landing and lift-off
 
-geographic = ["mountain", "mountains", "crater", "craters"]
-life = ["ET".lower(), "bird", "birds"]
+geographic = ["mountains", "craters"]
+life = ["ETs", "birds"]
 
 geographic_count = 0
 life_count = 0
@@ -13,33 +13,38 @@ boring_count = 0
 
 while True:     # until no more observations, ask user for input and then note the observation
 
-    observation = input("What do you see? ").lower()
+    observations = input("What do you see? ").lower()
 
-    if observation == "":
+    if observations == "":
         break
-    if not observation.endswith("."):   # formats string to add a period at the end of input
-        print(f"Noted: {observation}.")
+    if not observations.endswith("."):   # formats string to add a period at the end of input
+        print(f"Noted: {observations}.")
     else:
-        print(f"Noted: {observation}")
+        print(f"Noted: {observations}")
     
     # Categorize observation
 
-    if ", " not in observation:
-        for word in observation.split():    # splits the string into a list and uses the default white-space delimiter so we can iterate over
-            if word in geographic:
-                geographic_count += 1
-            elif word in life:
-                life_count += 1
-            else:
-                boring_count += 1
+    if ", " not in observations:
+        observations = observations.split() # stores as list to iterate through and delimter at default in case input is separated by only spaces
     else:
-        for word in observation.split(', '):    # splits the string into a list and uses the comma delimeter so we can iterate over
-            if word in geographic:
+        observations = observations.split(', ') # stores as list to iterate through and delimiter at ', ' in case input is separated by commas
+
+    for observation in observations:
+
+        found = False   # resets to False after running through each of the following for Loops
+
+        for word in geographic: # for each element in geographic
+            if observation in word.lower(): # if observations element in the geographic element
                 geographic_count += 1
-            elif word in life:
+                found = True
+
+        for word in life:   # for each element in life
+            if observation in word.lower(): # if observations element in the life element
                 life_count += 1
-            else: 
-                boring_count += 1
+                found = True
+
+        if found == False:  # if found never sets to True since the for Loop condition were not met
+            boring_count += 1
 
 print()
 print("Finished observations.")
