@@ -25,9 +25,9 @@ while True:     # until no more observations, ask user for input and then note t
     # Categorize observation
 
     if ", " not in observations:
-        observations = observations.split() # stores as list to iterate through and delimter at default in case input is separated by only spaces
+        observations = observations.split() # stores as list to iterate through and delimiter at default in case input is separated by only spaces; allows us to compare each word in input with list
     else:
-        observations = observations.split(', ') # stores as list to iterate through and delimiter at ', ' in case input is separated by commas
+        observations = observations.split(', ') # stores as list to iterate through and delimiter at ', ' in case input is separated by commas; allows us to compare each word in input with list
 
     for observation in observations:
 
